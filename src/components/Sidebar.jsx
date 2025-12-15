@@ -30,9 +30,9 @@ function SidebarItem({ item, isActive, isPathActive }) {
     return (
       <Link
         to={item.path}
-        className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+        className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
           isActive
-            ? 'bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold border border-blue-200 dark:border-blue-900'
+            ? 'bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100'
             : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white'
         }`}
       >
