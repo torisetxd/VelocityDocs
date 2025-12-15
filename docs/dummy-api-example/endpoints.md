@@ -1,5 +1,7 @@
 # API Endpoints
 
+### WARNING: This is a dummy example for illustrative purposes only. These endpoints DO NOT exist.
+
 This guide covers the main API endpoints available.
 
 ## Base URL

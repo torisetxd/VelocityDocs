@@ -1,5 +1,7 @@
 # Authentication
 
+### WARNING: This is a dummy example for illustrative purposes only. These endpoints DO NOT exist.
+
 All API requests require authentication via API keys or OAuth tokens.
 
 ## API Keys
