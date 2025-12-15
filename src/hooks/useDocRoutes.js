@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 
 export function useDocRoutes() {
-  const modules = import.meta.glob('../../docs/**/*.md', { 
+  const modules = import.meta.glob('@docs/**/*.md', { 
     query: '?raw', 
     import: 'default' 
   })
@@ -12,7 +12,7 @@ export function useDocRoutes() {
 
     Object.entries(modules).forEach(([path, loader]) => {
       const cleanPath = path
-        .replace('../../docs/', '')
+        .replace('@docs/', '')
         .replace('.md', '')
       
       fileMap[cleanPath] = loader
