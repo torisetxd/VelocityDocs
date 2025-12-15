@@ -12,7 +12,7 @@ export function useDocRoutes() {
 
     Object.entries(modules).forEach(([path, loader]) => {
       const cleanPath = path
-        .replace('@docs/', '')
+        .replace(/^.*?docs\//, '')
         .replace('.md', '')
       
       fileMap[cleanPath] = loader
