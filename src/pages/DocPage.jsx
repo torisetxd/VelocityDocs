@@ -65,7 +65,7 @@ export function DocPage() {
   }
 
   return (
-    <article className="min-w-full px-4 py-8 prose dark:prose-invert max-w-none bg-white dark:bg-black transition-colors">
+    <article className="w-full px-4 py-8 prose dark:prose-invert max-w-none bg-white dark:bg-black transition-colors">
       {content ? (
         <MarkdownRenderer content={content} />
       ) : (

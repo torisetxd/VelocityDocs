@@ -21,7 +21,7 @@ function DocsLayout() {
           onClose={() => setSidebarOpen(false)}
         />
         
-        <main className="flex-1 lg:ml-64">
+        <main className="flex-1 lg:ml-64 min-w-0">
           <Routes>
             <Route path="/*" element={<DocPage />} />
           </Routes>

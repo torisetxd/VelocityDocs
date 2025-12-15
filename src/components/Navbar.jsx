@@ -5,8 +5,8 @@ export function Navbar({ sidebarOpen, setSidebarOpen }) {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <nav className="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between px-4 z-40 transition-colors">
-      <div className="flex items-center gap-4">
+    <nav className="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between px-4 z-40 transition-colors overflow-x-hidden">
+      <div className="flex items-center gap-4 min-w-0 flex-1">
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
           className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors lg:hidden"
@@ -16,17 +16,17 @@ export function Navbar({ sidebarOpen, setSidebarOpen }) {
           </svg>
         </button>
         
-        <a href="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2 min-w-0 overflow-hidden">
           {config.logo && config.logo !== '/logo.png' && (
             <img src={config.logo} alt="logo" className="w-8 h-8" />
           )}
-          <span className="font-bold text-lg text-zinc-900 dark:text-white">
+          <span className="font-bold text-lg text-zinc-900 dark:text-white truncate min-w-0">
             {config.title}
           </span>
         </a>
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-shrink-0">
         <button
           onClick={toggleTheme}
           className="p-2.5 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
