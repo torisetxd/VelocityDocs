@@ -5,11 +5,11 @@ export function Navbar({ sidebarOpen, setSidebarOpen }) {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <nav className="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between px-4 z-40">
+    <nav className="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between px-4 z-40 transition-colors">
       <div className="flex items-center gap-4">
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded lg:hidden"
+          className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors lg:hidden"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -26,11 +26,11 @@ export function Navbar({ sidebarOpen, setSidebarOpen }) {
         </a>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
         <button
           onClick={toggleTheme}
-          className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded"
-          title="Toggle theme"
+          className="p-2.5 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+          title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
         >
           {theme === 'dark' ? (
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -48,7 +48,7 @@ export function Navbar({ sidebarOpen, setSidebarOpen }) {
             href={config.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded"
+            className="p-2.5 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
             title="View on GitHub"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

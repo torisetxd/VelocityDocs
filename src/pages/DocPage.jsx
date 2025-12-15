@@ -44,7 +44,7 @@ export function DocPage() {
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4" />
-          <p className="text-zinc-600 dark:text-zinc-400">Loading...</p>
+          <p className="text-zinc-500 dark:text-zinc-400">Loading...</p>
         </div>
       </div>
     )
@@ -53,10 +53,10 @@ export function DocPage() {
   if (error) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center max-w-md">
-          <h1 className="text-4xl font-bold text-zinc-900 dark:text-white mb-4">404</h1>
-          <p className="text-zinc-600 dark:text-zinc-400 mb-4">{error}</p>
-          <a href="/" className="text-blue-600 dark:text-blue-400 hover:underline">
+        <div className="text-center max-w-md p-8 bg-white dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-800">
+          <h1 className="text-6xl font-bold text-zinc-300 dark:text-zinc-700 mb-4">404</h1>
+          <p className="text-zinc-600 dark:text-zinc-400 mb-6">{error}</p>
+          <a href="/" className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
             Go back home
           </a>
         </div>
@@ -65,7 +65,7 @@ export function DocPage() {
   }
 
   return (
-    <article className="min-w-full px-4 py-8 prose dark:prose-invert max-w-none">
+    <article className="min-w-full px-4 py-8 prose dark:prose-invert max-w-none bg-white dark:bg-black transition-colors">
       {content ? (
         <MarkdownRenderer content={content} />
       ) : (

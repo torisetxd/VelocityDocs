@@ -30,10 +30,10 @@ function SidebarItem({ item, isActive }) {
     return (
       <Link
         to={item.path}
-        className={`block px-4 py-2 rounded text-sm transition-colors ${
+        className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
           isActive
-            ? 'bg-blue-100 dark:bg-blue-950 text-blue-900 dark:text-blue-100 font-semibold'
-            : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900'
+            ? 'bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold border border-blue-200 dark:border-blue-900'
+            : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-900 dark:hover:text-white'
         }`}
       >
         {item.title}
@@ -43,7 +43,7 @@ function SidebarItem({ item, isActive }) {
 
   return (
     <div className="mb-4">
-      <div className="px-4 py-2 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+      <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-500">
         {item.title}
       </div>
       <div className="space-y-1">
@@ -73,10 +73,10 @@ export function Sidebar({ tree, isOpen, onClose }) {
         />
       )}
       
-      <aside className={`fixed left-0 top-16 bottom-0 w-64 bg-white dark:bg-black border-r border-zinc-200 dark:border-zinc-800 overflow-y-auto transition-transform lg:translate-x-0 z-40 ${
+      <aside className={`fixed left-0 top-16 bottom-0 w-64 bg-zinc-50 dark:bg-black border-r border-zinc-200 dark:border-zinc-800 overflow-y-auto transition-transform lg:translate-x-0 z-40 ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
-        <nav className="p-4 space-y-2">
+        <nav className="p-4 space-y-1">
           {sidebarItems.map(item => (
             <SidebarItem
               key={item.key}

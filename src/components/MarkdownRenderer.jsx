@@ -30,7 +30,7 @@ const Pre = ({ children }) => {
 const Code = ({ inline, className, children, ...props }) => {
   if (inline) {
     return (
-      <code className="bg-zinc-200 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-pink-600 dark:text-pink-400 font-mono" {...props}>
+      <code className="bg-pink-50 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-pink-700 dark:text-pink-400 font-mono border border-pink-200 dark:border-transparent" {...props}>
         {children}
       </code>
     )
@@ -88,7 +88,7 @@ const Link = ({ href, children }) => {
   return (
     <a 
       href={href} 
-      className="text-blue-600 dark:text-blue-400 hover:underline"
+      className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline transition-colors"
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noopener noreferrer' : undefined}
     >
@@ -99,8 +99,8 @@ const Link = ({ href, children }) => {
 
 const List = ({ ordered, children }) => {
   const className = ordered 
-    ? 'list-decimal list-inside ml-4 mb-4' 
-    : 'list-disc list-inside ml-4 mb-4'
+    ? 'list-decimal list-inside ml-4 mb-4 text-zinc-700 dark:text-zinc-300' 
+    : 'list-disc list-inside ml-4 mb-4 text-zinc-700 dark:text-zinc-300'
   
   return <ul className={className}>{children}</ul>
 }
@@ -111,7 +111,7 @@ const ListItem = ({ children }) => {
 
 const BlockQuote = ({ children }) => {
   return (
-    <blockquote className="border-l-4 border-zinc-300 dark:border-zinc-700 pl-4 my-4 italic text-zinc-600 dark:text-zinc-400">
+    <blockquote className="border-l-4 border-blue-500 dark:border-blue-600 pl-4 my-4 italic text-zinc-600 dark:text-zinc-400 bg-blue-50 dark:bg-transparent py-2 rounded-r">
       {children}
     </blockquote>
   )
@@ -135,25 +135,25 @@ export function MarkdownRenderer({ content }) {
         ol: ({ children }) => <List ordered={true}>{children}</List>,
         li: ListItem,
         blockquote: BlockQuote,
-        hr: () => <hr className="my-4 border-zinc-300 dark:border-zinc-800" />,
+        hr: () => <hr className="my-6 border-zinc-200 dark:border-zinc-800" />,
         table: ({ children }) => (
-          <div className="overflow-x-auto my-4">
-            <table className="w-full border-collapse border border-zinc-200 dark:border-zinc-800">
+          <div className="overflow-x-auto my-4 rounded-lg border border-zinc-200 dark:border-zinc-800">
+            <table className="w-full border-collapse">
               {children}
             </table>
           </div>
         ),
         th: ({ children }) => (
-          <th className="border border-zinc-200 dark:border-zinc-800 p-2 bg-zinc-100 dark:bg-zinc-900 text-left font-semibold">
+          <th className="border-b border-zinc-200 dark:border-zinc-800 p-3 bg-zinc-50 dark:bg-zinc-900 text-left font-semibold text-zinc-900 dark:text-white">
             {children}
           </th>
         ),
         td: ({ children }) => (
-          <td className="border border-zinc-200 dark:border-zinc-800 p-2">
+          <td className="border-b border-zinc-100 dark:border-zinc-800 p-3 text-zinc-700 dark:text-zinc-300">
             {children}
           </td>
         ),
-        strong: ({ children }) => <strong className="font-bold">{children}</strong>,
+        strong: ({ children }) => <strong className="font-bold text-zinc-900 dark:text-white">{children}</strong>,
         em: ({ children }) => <em className="italic">{children}</em>,
       }}
     >
