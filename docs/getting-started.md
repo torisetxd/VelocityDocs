@@ -17,7 +17,6 @@ Edit `src/config.js` to customize your docs:
 ```javascript
 export const config = {
   title: "Your Docs Title",
-  description: "Your description",
   logo: "/your-logo.png",
   github: "https://github.com/yourusername/repo"
 }
