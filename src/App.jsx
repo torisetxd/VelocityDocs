@@ -5,7 +5,6 @@ import { useDocRoutes } from './hooks/useDocRoutes'
 import { Navbar } from './components/Navbar'
 import { Sidebar } from './components/Sidebar'
 import { DocPage } from './pages/DocPage'
-import Landing from './pages/Landing'
 
 function DocsLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -37,7 +36,6 @@ export default function App() {
     <ThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Landing />} />
           <Route path="/*" element={<DocsLayout />} />
         </Routes>
       </BrowserRouter>
