@@ -2,6 +2,8 @@
 
 Welcome to VelocityDocs! This is a lightweight, fast markdown documentation renderer built with React and Vite.
 
+See the live demo and basic documentation at [http://velocitydocs.pages.dev/](http://velocitydocs.pages.dev/)
+
 ## Installation
 
 Clone the repository and install dependencies:
