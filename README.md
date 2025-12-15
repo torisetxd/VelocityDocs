@@ -52,3 +52,7 @@ npm run build
 ```
 
 The output goes to `/dist` for deployment to Cloudflare Pages, Netlify, or any static host.
+
+---
+
+Note: Yes, this was written with the help of AI. ;)
