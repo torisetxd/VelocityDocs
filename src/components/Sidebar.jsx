@@ -32,8 +32,8 @@ function SidebarItem({ item, isActive }) {
         to={item.path}
         className={`block px-4 py-2 rounded text-sm transition-colors ${
           isActive
-            ? 'bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100 font-semibold'
-            : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800'
+            ? 'bg-blue-100 dark:bg-blue-950 text-blue-900 dark:text-blue-100 font-semibold'
+            : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900'
         }`}
       >
         {item.title}
@@ -68,12 +68,12 @@ export function Sidebar({ tree, isOpen, onClose }) {
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
           onClick={onClose}
         />
       )}
       
-      <aside className={`fixed left-0 top-16 bottom-0 w-64 bg-white dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 overflow-y-auto transition-transform lg:translate-x-0 z-40 ${
+      <aside className={`fixed left-0 top-16 bottom-0 w-64 bg-white dark:bg-black border-r border-zinc-200 dark:border-zinc-800 overflow-y-auto transition-transform lg:translate-x-0 z-40 ${
         isOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
         <nav className="p-4 space-y-2">

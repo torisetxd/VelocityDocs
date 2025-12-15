@@ -16,7 +16,7 @@ export function CopyButton({ text }) {
   return (
     <button 
       onClick={handleCopy}
-      className="absolute top-2 right-2 p-1.5 rounded bg-zinc-700 hover:bg-zinc-600 transition-all opacity-0 group-hover:opacity-100 text-xs text-white dark:bg-zinc-600 dark:hover:bg-zinc-500"
+      className="absolute top-2 right-2 p-1.5 rounded bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-800 dark:hover:bg-zinc-700 transition-all opacity-0 group-hover:opacity-100 text-xs text-zinc-700 dark:text-zinc-300"
       aria-label="Copy text"
       title={copied ? "Copied!" : "Copy"}
     >

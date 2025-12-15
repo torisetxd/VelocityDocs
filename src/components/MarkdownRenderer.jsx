@@ -18,9 +18,9 @@ const Pre = ({ children }) => {
   const text = extractText(children)
   
   return (
-    <div className="relative group my-4 rounded-lg overflow-hidden border border-zinc-700 dark:border-zinc-700 bg-[#1e1e1e]">
+    <div className="relative group my-4 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950">
       <CopyButton text={text} />
-      <pre className="!m-0 !p-4 !bg-[#1e1e1e] overflow-x-auto text-sm">
+      <pre className="!m-0 !p-4 !bg-zinc-50 dark:!bg-zinc-950 overflow-x-auto text-sm">
         {children}
       </pre>
     </div>
@@ -30,7 +30,7 @@ const Pre = ({ children }) => {
 const Code = ({ inline, className, children, ...props }) => {
   if (inline) {
     return (
-      <code className="bg-zinc-800 dark:bg-zinc-700 px-1.5 py-0.5 rounded text-sm text-pink-400 dark:text-pink-300 font-mono" {...props}>
+      <code className="bg-zinc-200 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-pink-600 dark:text-pink-400 font-mono" {...props}>
         {children}
       </code>
     )
@@ -111,7 +111,7 @@ const ListItem = ({ children }) => {
 
 const BlockQuote = ({ children }) => {
   return (
-    <blockquote className="border-l-4 border-zinc-400 dark:border-zinc-600 pl-4 my-4 italic text-zinc-600 dark:text-zinc-400">
+    <blockquote className="border-l-4 border-zinc-300 dark:border-zinc-700 pl-4 my-4 italic text-zinc-600 dark:text-zinc-400">
       {children}
     </blockquote>
   )
@@ -135,21 +135,21 @@ export function MarkdownRenderer({ content }) {
         ol: ({ children }) => <List ordered={true}>{children}</List>,
         li: ListItem,
         blockquote: BlockQuote,
-        hr: () => <hr className="my-4 border-zinc-300 dark:border-zinc-700" />,
+        hr: () => <hr className="my-4 border-zinc-300 dark:border-zinc-800" />,
         table: ({ children }) => (
           <div className="overflow-x-auto my-4">
-            <table className="w-full border-collapse border border-zinc-300 dark:border-zinc-700">
+            <table className="w-full border-collapse border border-zinc-200 dark:border-zinc-800">
               {children}
             </table>
           </div>
         ),
         th: ({ children }) => (
-          <th className="border border-zinc-300 dark:border-zinc-700 p-2 bg-zinc-100 dark:bg-zinc-800 text-left font-semibold">
+          <th className="border border-zinc-200 dark:border-zinc-800 p-2 bg-zinc-100 dark:bg-zinc-900 text-left font-semibold">
             {children}
           </th>
         ),
         td: ({ children }) => (
-          <td className="border border-zinc-300 dark:border-zinc-700 p-2">
+          <td className="border border-zinc-200 dark:border-zinc-800 p-2">
             {children}
           </td>
         ),
