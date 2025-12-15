@@ -1,16 +1,54 @@
-# React + Vite
+# Velocity Docs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to VelocityDocs! This is a lightweight, fast markdown documentation renderer built with React and Vite.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clone the repository and install dependencies:
 
-## React Compiler
+```bash
+npm install
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Configuration
 
-## Expanding the ESLint configuration
+Edit `src/config.js` to customize your docs:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```javascript
+export const config = {
+  title: "Your Docs Title",
+  logo: "/your-logo.png",
+  github: "https://github.com/yourusername/repo"
+}
+```
+
+## File Structure
+
+Place your markdown files in the `/docs` folder. The folder structure automatically becomes your navigation:
+
+```
+docs/
+  getting-started.md
+  api/
+    endpoints.md
+    authentication.md
+  guides/
+    setup.md
+    deployment.md
+```
+
+## Running Locally
+
+```bash
+npm run dev
+```
+
+Then open `http://localhost:5173` in your browser.
+
+## Building
+
+```bash
+npm run build
+```
+
+The output goes to `/dist` for deployment to Cloudflare Pages, Netlify, or any static host.
