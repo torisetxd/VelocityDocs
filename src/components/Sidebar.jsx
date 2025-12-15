@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 
 function buildSidebarItems(tree, prefix = '') {
-  return Object.entries(tree).map(([key, value]) => {
+  const items = Object.entries(tree).map(([key, value]) => {
     const isRoute = value.path !== undefined
     const currentPrefix = prefix ? `${prefix}/${key}` : key
     
@@ -10,7 +10,8 @@ function buildSidebarItems(tree, prefix = '') {
         key: currentPrefix,
         title: value.title,
         path: value.path,
-        type: 'item'
+        type: 'item',
+        sortKey: key.toLowerCase()
       }
     }
 
@@ -20,9 +21,15 @@ function buildSidebarItems(tree, prefix = '') {
       key: currentPrefix,
       title: key.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
       children,
-      type: 'group'
+      type: 'group',
+      sortKey: key.toLowerCase()
     }
   })
+
+  const files = items.filter(item => item.type === 'item').sort((a, b) => a.sortKey.localeCompare(b.sortKey))
+  const directories = items.filter(item => item.type === 'group').sort((a, b) => a.sortKey.localeCompare(b.sortKey))
+
+  return [...files, ...directories]
 }
 
 function SidebarItem({ item, isActive, isPathActive }) {
