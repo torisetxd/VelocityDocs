@@ -63,12 +63,12 @@ const Heading = ({ level, children }) => {
     .replace(/[^\w-]/g, '')
 
   const className = {
-    1: 'text-4xl font-bold mt-8 mb-4 text-zinc-900 dark:text-white scroll-mt-20',
-    2: 'text-3xl font-bold mt-6 mb-3 text-zinc-900 dark:text-white scroll-mt-20',
-    3: 'text-2xl font-semibold mt-5 mb-2 text-zinc-800 dark:text-zinc-100 scroll-mt-20',
-    4: 'text-xl font-semibold mt-4 mb-2 text-zinc-800 dark:text-zinc-100 scroll-mt-20',
-    5: 'text-lg font-semibold mt-3 mb-1 text-zinc-700 dark:text-zinc-200',
-    6: 'text-base font-semibold mt-2 mb-1 text-zinc-700 dark:text-zinc-200'
+    1: 'text-4xl font-bold mt-8 first:mt-0 mb-4 text-zinc-900 dark:text-white scroll-mt-20',
+    2: 'text-3xl font-bold mt-6 first:mt-0 mb-3 text-zinc-900 dark:text-white scroll-mt-20',
+    3: 'text-2xl font-semibold mt-5 first:mt-0 mb-2 text-zinc-800 dark:text-zinc-100 scroll-mt-20',
+    4: 'text-xl font-semibold mt-4 first:mt-0 mb-2 text-zinc-800 dark:text-zinc-100 scroll-mt-20',
+    5: 'text-lg font-semibold mt-3 first:mt-0 mb-1 text-zinc-700 dark:text-zinc-200',
+    6: 'text-base font-semibold mt-2 first:mt-0 mb-1 text-zinc-700 dark:text-zinc-200'
   }[level]
 
   const Tag = `h${level}`
