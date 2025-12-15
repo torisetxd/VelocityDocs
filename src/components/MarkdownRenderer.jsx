@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { CopyButton } from './CopyButton'
 
 function extractText(children) {
@@ -105,7 +106,20 @@ const List = ({ ordered, children }) => {
   return <ul className={className}>{children}</ul>
 }
 
-const ListItem = ({ children }) => {
+const ListItem = ({ children, checked }) => {
+  if (checked !== undefined) {
+    return (
+      <li className="flex items-center gap-2 text-zinc-700 dark:text-zinc-300 mb-1">
+        <input 
+          type="checkbox" 
+          checked={checked} 
+          readOnly 
+          className="w-4 h-4 cursor-default rounded border-zinc-300 dark:border-zinc-600 text-blue-600 dark:text-blue-500 bg-zinc-50 dark:bg-zinc-900"
+        />
+        <span>{children}</span>
+      </li>
+    )
+  }
   return <li className="text-zinc-700 dark:text-zinc-300 mb-1">{children}</li>
 }
 
@@ -120,6 +134,7 @@ const BlockQuote = ({ children }) => {
 export function MarkdownRenderer({ content }) {
   return (
     <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
       components={{
         pre: Pre,
         code: Code,
@@ -143,6 +158,9 @@ export function MarkdownRenderer({ content }) {
             </table>
           </div>
         ),
+        thead: ({ children }) => <thead>{children}</thead>,
+        tbody: ({ children }) => <tbody>{children}</tbody>,
+        tr: ({ children }) => <tr>{children}</tr>,
         th: ({ children }) => (
           <th className="border-b border-zinc-200 dark:border-zinc-800 p-3 bg-zinc-50 dark:bg-zinc-900 text-left font-semibold text-zinc-900 dark:text-white">
             {children}
