@@ -25,7 +25,7 @@ function buildSidebarItems(tree, prefix = '') {
   })
 }
 
-function SidebarItem({ item, isActive }) {
+function SidebarItem({ item, isActive, isPathActive }) {
   if (item.type === 'item') {
     return (
       <Link
@@ -48,7 +48,7 @@ function SidebarItem({ item, isActive }) {
       </div>
       <div className="space-y-1">
         {item.children?.map(child => (
-          <SidebarItem key={child.key} item={child} isActive={false} />
+          <SidebarItem key={child.key} item={child} isActive={child.type === 'item' && isPathActive(child.path)} isPathActive={isPathActive} />
         ))}
       </div>
     </div>
@@ -82,6 +82,7 @@ export function Sidebar({ tree, isOpen, onClose }) {
               key={item.key}
               item={item}
               isActive={item.type === 'item' && isPathActive(item.path)}
+              isPathActive={isPathActive}
             />
           ))}
         </nav>
